@@ -28,18 +28,18 @@ local stations <const> = {
 
 local defaultStationText <const> = Config.NextStation
 
-Citizen.CreateThread(function()
-    if not Config.UseFreight then 
+CreateThread(function()
+    if not Config.UseFreight then
         SwitchTrainTrack(0, false)
         SwitchTrainTrack(3, true)
         SetTrainTrackSpawnFrequency(0, 0)
-        SetRandomTrains(1)
+        SetRandomTrains(true)
         SetTrainsForceDoorsOpen(false)
     else
         SwitchTrainTrack(0, true)
         SwitchTrainTrack(3, true)
         SetTrainTrackSpawnFrequency(0, 120000)
-        SetRandomTrains(1)
+        SetRandomTrains(true)
         SetTrainsForceDoorsOpen(false)
     end
 
@@ -118,7 +118,7 @@ CreateThread(function()
             end
             BeginTextCommandDisplayHelp("NEXT_STATION_NOTIFICATION")
             AddTextComponentSubstringPlayerName(closestStation)
-            EndTextCommandDisplayHelp(0, 0, 0, -1)
+            EndTextCommandDisplayHelp(0, false, false, -1)
         end
     end
 end)
@@ -154,8 +154,6 @@ CreateThread(function()
         end
     end
 end)
-
-
 
 function compareCoords(a, b) return a[2] < b[2] end
 

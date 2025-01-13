@@ -7,9 +7,9 @@ Config = {}
 --    ██║   ██║╚██████╗██║  ██╗███████╗   ██║   
 --    ╚═╝   ╚═╝ ╚═════╝╚═╝  ╚═╝╚══════╝   ╚═╝   
 -- ==============================================
-Config.TicketPrice = 50; -- Price per metro ticket
-Config.MoneySymbol = '' -- money symbol
-Config.PayType = ''; -- Your payment method (money / bank)
+Config.TicketPrice = 100 -- Price per metro ticket
+Config.MoneySymbol = '$' -- Money symbol
+Config.PayType = 'bank' -- QB-Core: Your payment method (cash / bank)
 
 
 
@@ -20,8 +20,8 @@ Config.PayType = ''; -- Your payment method (money / bank)
 -- ██║     ╚██████╔╝███████╗██║╚██████╗███████╗
 -- ╚═╝      ╚═════╝ ╚══════╝╚═╝ ╚═════╝╚══════╝
 -- ==============================================                                        
-Config.CallPolice = false; -- enable or disable the alert for the police: true / false
-Config.PoliceAlert = 3500; --How often will the cops be called in ms
+Config.CallPolice = false -- enable or disable the alert for the police: true / false
+Config.PoliceAlert = 3500 --How often will the cops be called in ms
 
 
 
@@ -33,8 +33,8 @@ Config.PoliceAlert = 3500; --How often will the cops be called in ms
 --  ╚═════╝ ╚═╝
 -- ==============================================    
 -- IF USING OX_LIB, PLEASE UNCOMMENT '@ox_lib/init.lua' FROM YOUR FXMANIFEST.LUA
-Config.Notify = '' -- okok / ox / cs / esx / ps-ui
-Config.TextUI = '' -- okok / DisplayHelpText (gta) / ox / esx / ps-ui
+Config.Notify = 'qb' -- qb / okok / ox / cs 
+Config.TextUI = 'gta' -- okok / DisplayHelpText (gta) / ox / ps
 
 
 
@@ -45,10 +45,11 @@ Config.TextUI = '' -- okok / DisplayHelpText (gta) / ox / esx / ps-ui
 -- ███████╗██╔╝ ██╗   ██║   ██║  ██║██║  ██║███████║
 -- ╚══════╝╚═╝  ╚═╝   ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝
 -- ==================================================                                                  
-Config.Banking = '' -- Your resource name for your banking system
-Config.Dispatch = '' -- ps / qs / cd
-Config.PoliceJob = '' -- Your police job name | Only if using Core Dispatch
-Config.UseFreight = true -- true / false | If you are experience train cars detaching from the freight train, set this to false.
+Config.Banking = 'Renewed-Banking' -- Your resource name for your banking system
+Config.Dispatch = 'qb' -- ps / qs / qb
+Config.PoliceJob = 'police' -- Your police job name | Only if using Core Dispatch
+Config.UseFreight = false -- true / false | If you are experience train cars detaching from the freight train, set this to false.
+
 
 
 -- ███████╗████████╗ █████╗ ████████╗██╗ ██████╗ ███╗   ██╗███████╗
@@ -57,7 +58,7 @@ Config.UseFreight = true -- true / false | If you are experience train cars deta
 -- ╚════██║   ██║   ██╔══██║   ██║   ██║██║   ██║██║╚██╗██║╚════██║
 -- ███████║   ██║   ██║  ██║   ██║   ██║╚██████╔╝██║ ╚████║███████║
 -- ╚══════╝   ╚═╝   ╚═╝  ╚═╝   ╚═╝   ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚══════╝
--- =================================================================                                                                
+-- =================================================================  
 Config.StationNames = { -- DO NOT EDIT NODES. ONLY EDIT NAMES!!!!!
     { node = 179,  name = "Strawberry",      },
     { node = 271,  name = "Puerto Del Sol",  },
@@ -93,8 +94,8 @@ Config.Blips = {
 	{title="METRO: Little Seoul", colour=1, id=78, x=-496.0209, y=-681.0325, z=12.08264},
 	{title="METRO: Pillbox South", colour=1, id=78, x=-218.2868, y=-1031.54, z=30.51112},
 	{title="METRO: Davis", colour=1, id=78, x=112.3714, y=-1729.233, z=30.24097},
-
 }
+
 -- =========================================================
 -- ██╗      ██████╗  ██████╗ █████╗ ██╗     ███████╗███████╗
 -- ██║     ██╔═══██╗██╔════╝██╔══██╗██║     ██╔════╝██╔════╝
@@ -221,7 +222,7 @@ Config.Locales = {
             },
             ["recieved"] = {
                 ["title"] = "Métro de Los Santos",
-                ["description"] = 'Vous avez reçu votre billet. Montez dans le métro avant qu'il ne parte !',
+                ["description"] = 'Vous avez reçu votre billet. Montez dans le métro avant qu\'il ne parte !',
             },
             ["voidticket"] = {
                 ["title"] = "Métro de Los Santos",
@@ -240,5 +241,5 @@ Config.Locales = {
                 },
             },
         },
-    }        
+    }
 }
